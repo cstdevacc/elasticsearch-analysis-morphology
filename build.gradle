@@ -23,8 +23,8 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath "org.elasticsearch.gradle:build-tools:6.0.0"
-        classpath "com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7"
+        classpath "org.elasticsearch.gradle:build-tools:6.5.4"
+        classpath "com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.1"
     }
 }
 
@@ -34,14 +34,14 @@ apply plugin: 'elasticsearch.esplugin'
 apply plugin: 'com.jfrog.bintray'
 apply plugin: 'maven-publish'
 
-//repositories {
-//    maven {
-//        name 'bintray-akuznetsov-russianmorphology'
-//        url "http://dl.bintray.com/akuznetsov/russianmorphology"
-//    }
-//}
+repositories {
+    maven {
+        name 'bintray-cstdevacc-russianmorphology'
+        url "http://dl.bintray.com/cstdevacc/russianmorphology"
+    }
+}
 
-version = '6.0.0-SNAPSHOT'
+version = '6.5.4'
 
 esplugin {
     description 'English and Russian Morphology for ElasticSearch.'
@@ -51,9 +51,9 @@ esplugin {
 esplugin.version = version
 
 dependencies {
-    compile "org.apache.lucene.morphology:russian:1.4-SNAPSHOT"
-    compile "org.apache.lucene.morphology:english:1.4-SNAPSHOT"
-    compile "org.apache.lucene.morphology:morph:1.4-SNAPSHOT"
+    compile "org.apache.lucene.morphology:russian:1.5"
+    compile "org.apache.lucene.morphology:english:1.5"
+    compile "org.apache.lucene.morphology:morph:1.5"
 }
 
 publishing {
